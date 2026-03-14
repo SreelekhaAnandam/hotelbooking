@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Booking System</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <div class="logo">Hotel Booking</div>
+      <nav>
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="rooms.html">Rooms</a></li>
+          <li><a href="searchhotels.html">Search</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="register.html" class="btn-nav">Register</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">Premium Hotel Booking</div>
+      <h1>Find Your <em>Perfect</em><br>Hotel Stay</h1>
+      <p>Discover handpicked luxury hotels, eco retreats, and budget stays. Book with ease and travel in style.</p>
+      <div class="search-bar">
+        <input type="text" placeholder="Enter city or hotel name…">
+        <button onclick="window.location.href='searchhotels.html'">Search Now</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED HOTELS -->
+  <section class="featured-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Handpicked For You</span>
+        <h2>Featured Hotels</h2>
+        <p>Explore our most popular hotel categories loved by thousands of guests.</p>
+      </div>
+      <div class="hotels-grid">
+
+        <div class="hotel-card">
+          <img class="hotel-card-img"
+            src="https://img.freepik.com/premium-photo/luxury-resort-hotel-with-swimming-pool-nature-view-background-night_467541-1088.jpg"
+            alt="Luxury Resort">
+          <div class="hotel-card-body">
+            <span class="hotel-card-badge">Luxury</span>
+            <h3>Resorts</h3>
+            <p>Pamper yourself in world-class resorts with pools, spas, and breathtaking views.</p>
+            <div class="hotel-card-price">₹4,999 <span>/ night</span></div>
+            <a href="rooms.html" class="btn btn-gold">Explore Rooms</a>
+          </div>
+        </div>
+
+        <div class="hotel-card">
+          <img class="hotel-card-img"
+            src="https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BB1qBSDs.img?w=800&h=415&q=60&m=2&f=jpg"
+            alt="Eco Hotel">
+          <div class="hotel-card-body">
+            <span class="hotel-card-badge">Eco Stay</span>
+            <h3>Eco Hotels</h3>
+            <p>Sustainable living meets comfort. Experience nature without compromising on amenities.</p>
+            <div class="hotel-card-price">₹2,999 <span>/ night</span></div>
+            <a href="rooms.html" class="btn btn-gold">Explore Rooms</a>
+          </div>
+        </div>
+
+        <div class="hotel-card">
+          <img class="hotel-card-img"
+            src="https://cf.bstatic.com/static/img/theme-index/bg_motels/d856398f47116cf15b08e830bfd63530539cd8e1.jpg"
+            alt="Motel">
+          <div class="hotel-card-body">
+            <span class="hotel-card-badge">Budget</span>
+            <h3>Motels</h3>
+            <p>Clean, comfortable and affordable. Perfect for road trips and quick overnight stays.</p>
+            <div class="hotel-card-price">₹1,500 <span>/ night</span></div>
+            <a href="rooms.html" class="btn btn-gold">Explore Rooms</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- AMENITIES -->
+  <section class="amenities-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Why Choose Us</span>
+        <h2>World-Class Amenities</h2>
+      </div>
+      <div class="amenities-grid">
+        <div class="amenity-card">
+          <div class="amenity-icon">🏊</div>
+          <h4>Swimming Pool</h4>
+          <p>Heated pools available 24/7 in select properties</p>
+        </div>
+        <div class="amenity-card">
+          <div class="amenity-icon">🍽️</div>
+          <h4>Fine Dining</h4>
+          <p>Curated menus by award-winning chefs</p>
+        </div>
+        <div class="amenity-card">
+          <div class="amenity-icon">💆</div>
+          <h4>Spa & Wellness</h4>
+          <p>Rejuvenating treatments and wellness programs</p>
+        </div>
+        <div class="amenity-card">
+          <div class="amenity-icon">🅿️</div>
+          <h4>Free Parking</h4>
+          <p>Secure parking available at all properties</p>
+        </div>
+        <div class="amenity-card">
+          <div class="amenity-icon">📶</div>
+          <h4>High-Speed WiFi</h4>
+          <p>Stay connected with complimentary internet</p>
+        </div>
+        <div class="amenity-card">
+          <div class="amenity-icon">🛎️</div>
+          <h4>24/7 Concierge</h4>
+          <p>Personalised service round the clock</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="logo">Hotel Booking</div>
+          <p>Your trusted partner for finding the perfect hotel stay across India and beyond.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigate</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="rooms.html">Rooms</a></li>
+            <li><a href="searchhotels.html">Search Hotels</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Account</h4>
+          <ul>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="payment.html">Payment</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+911234567890">+91 12345 67890</a></li>
+            <li><a href="mailto:info@hotelbooking.com">info@hotelbooking.com</a></li>
+            <li><a href="#">Bengaluru, Karnataka</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2024 Hotel Booking System. All rights reserved.</span>
+        <span>Crafted with ♥</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

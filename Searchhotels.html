@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Hotels – Hotel Booking System</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <a href="index.html"><div class="logo">Hotel Booking</div></a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="rooms.html">Rooms</a></li>
+          <li><a href="searchhotels.html" class="active">Search</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="register.html" class="btn-nav">Register</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="search-page">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span>›</span>
+        <span>Search Hotels</span>
+      </div>
+
+      <!-- Search Panel -->
+      <div class="search-panel">
+        <h2>Find Your Hotel</h2>
+        <div class="search-form">
+          <div class="form-group">
+            <label>City or Hotel Name</label>
+            <input type="text" id="city" placeholder="e.g. Bengaluru, Mumbai…">
+          </div>
+          <div class="form-group">
+            <label>Check-in Date</label>
+            <input type="date" id="checkin">
+          </div>
+          <div class="form-group">
+            <label>Check-out Date</label>
+            <input type="date" id="checkout">
+          </div>
+          <div class="form-group">
+            <label>Guests</label>
+            <select id="guests">
+              <option value="1">1 Guest</option>
+              <option value="2">2 Guests</option>
+              <option value="3">3 Guests</option>
+              <option value="4">4 Guests</option>
+              <option value="5">5 Guests</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>&nbsp;</label>
+            <button class="btn btn-gold" style="width:100%;padding:0.87rem 1.5rem" onclick="searchHotels()">Search</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Results -->
+      <p class="hotel-results-title">Available Hotels</p>
+      <div class="hotel-results">
+
+        <div class="hotel-result-card">
+          <div class="hotel-result-info">
+            <h4>Hotel Paradise</h4>
+            <p>Beachfront property with breathtaking ocean views and world-class amenities.</p>
+            <div class="hotel-result-stars">★★★★★</div>
+          </div>
+          <div class="hotel-result-right">
+            <div class="hotel-result-price">₹1,500 <small>/ night</small></div>
+            <a href="book-now.html?room=paradise&price=1500" class="btn btn-gold">Book Now</a>
+          </div>
+        </div>
+
+        <div class="hotel-result-card">
+          <div class="hotel-result-info">
+            <h4>Luxury Inn</h4>
+            <p>Premium urban hotel with rooftop restaurant, spa, and premium business lounge.</p>
+            <div class="hotel-result-stars">★★★★★</div>
+          </div>
+          <div class="hotel-result-right">
+            <div class="hotel-result-price">₹2,000 <small>/ night</small></div>
+            <a href="book-now.html?room=luxury&price=2000" class="btn btn-gold">Book Now</a>
+          </div>
+        </div>
+
+        <div class="hotel-result-card">
+          <div class="hotel-result-info">
+            <h4>Budget Stay</h4>
+            <p>Clean, affordable and conveniently located near city centre with all basic amenities.</p>
+            <div class="hotel-result-stars">★★★☆☆</div>
+          </div>
+          <div class="hotel-result-right">
+            <div class="hotel-result-price">₹1,000 <small>/ night</small></div>
+            <a href="book-now.html?room=budget&price=1000" class="btn btn-gold">Book Now</a>
+          </div>
+        </div>
+
+        <div class="hotel-result-card">
+          <div class="hotel-result-info">
+            <h4>Grand Prestige</h4>
+            <p>Historic five-star property in the heart of the city with curated dining experiences.</p>
+            <div class="hotel-result-stars">★★★★★</div>
+          </div>
+          <div class="hotel-result-right">
+            <div class="hotel-result-price">₹4,999 <small>/ night</small></div>
+            <a href="book-now.html?room=grand&price=4999" class="btn btn-gold">Book Now</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="footer-bottom">
+        <span>&copy; 2024 Hotel Booking System. All rights reserved.</span>
+        <span>Crafted with ♥</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Pre-fill today's date
+    const today = new Date().toISOString().split('T')[0];
+    document.getElementById('checkin').value = today;
+    const tomorrow = new Date(Date.now() + 86400000).toISOString().split('T')[0];
+    document.getElementById('checkout').value = tomorrow;
+
+    function searchHotels() {
+      const city = document.getElementById('city').value;
+      if (!city.trim()) {
+        alert('Please enter a city or hotel name.');
+        return;
+      }
+      // In a real app, this would filter/fetch results
+      alert(`Searching hotels in "${city}"…`);
+    }
+  </script>
+
+</body>
+</html>

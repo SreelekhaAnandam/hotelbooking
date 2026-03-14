@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment – Hotel Booking System</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <a href="index.html"><div class="logo">Hotel Booking</div></a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="rooms.html">Rooms</a></li>
+          <li><a href="searchhotels.html">Search</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="register.html" class="btn-nav">Register</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="payment-page">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span>›</span>
+        <a href="book-now.html">Booking</a>
+        <span>›</span>
+        <span>Payment</span>
+      </div>
+
+      <div class="payment-grid">
+
+        <!-- Payment Form -->
+        <div class="payment-card">
+          <h2>Payment Details</h2>
+
+          <!-- Personal Info -->
+          <span class="section-subtitle">Personal Information</span>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:2rem">
+            <div class="form-group">
+              <label>Full Name</label>
+              <input type="text" placeholder="John Doe" required>
+            </div>
+            <div class="form-group">
+              <label>Email Address</label>
+              <input type="email" placeholder="you@example.com" required>
+            </div>
+          </div>
+
+          <!-- Payment Method -->
+          <span class="section-subtitle">Payment Method</span>
+          <div class="payment-methods">
+            <div class="pay-method active" onclick="selectMethod(this)">💳 Credit Card</div>
+            <div class="pay-method" onclick="selectMethod(this)">🏦 Debit Card</div>
+            <div class="pay-method" onclick="selectMethod(this)">📱 UPI</div>
+            <div class="pay-method" onclick="selectMethod(this)">🏧 Net Banking</div>
+          </div>
+
+          <!-- Card Visual -->
+          <div class="card-visual">
+            <div class="card-chip"></div>
+            <div class="card-number-display" id="cardDisplay">•••• •••• •••• ••••</div>
+            <div class="card-bottom">
+              <div>
+                <div class="card-label">Card Holder</div>
+                <div class="card-value" id="cardHolder">YOUR NAME</div>
+              </div>
+              <div>
+                <div class="card-label">Expires</div>
+                <div class="card-value" id="cardExpiry">MM/YY</div>
+              </div>
+              <div class="card-logo">◉◉</div>
+            </div>
+          </div>
+
+          <!-- Card Fields -->
+          <span class="section-subtitle">Card Information</span>
+          <div style="margin-bottom:1rem">
+            <div class="form-group" style="margin-bottom:1rem">
+              <label>Cardholder Name</label>
+              <input type="text" id="cardName" placeholder="Name on card" oninput="document.getElementById('cardHolder').textContent=this.value||'YOUR NAME'">
+            </div>
+            <div class="form-group" style="margin-bottom:1rem">
+              <label>Card Number</label>
+              <input type="text" id="cardNumber" placeholder="1234 5678 9101 1121" maxlength="19"
+                oninput="formatCard(this)">
+            </div>
+            <div class="input-row">
+              <div class="form-group">
+                <label>Expiry Date</label>
+                <input type="month" id="cardExp" oninput="document.getElementById('cardExpiry').textContent=this.value||'MM/YY'">
+              </div>
+              <div class="form-group">
+                <label>CVV</label>
+                <input type="password" placeholder="•••" maxlength="3">
+              </div>
+            </div>
+          </div>
+
+          <!-- Billing Address -->
+          <span class="section-subtitle">Billing Address</span>
+          <div style="display:flex;flex-direction:column;gap:1rem;margin-bottom:2rem">
+            <div class="form-group">
+              <label>Street Address</label>
+              <input type="text" placeholder="123 Street Name">
+            </div>
+            <div class="input-row">
+              <div class="form-group">
+                <label>City</label>
+                <input type="text" placeholder="City">
+              </div>
+              <div class="form-group">
+                <label>ZIP / PIN Code</label>
+                <input type="text" placeholder="560001">
+              </div>
+            </div>
+          </div>
+
+          <button class="btn-full" onclick="submitPayment()">Pay ₹4,999 Securely</button>
+          <div class="secure-badge">All transactions are 256-bit SSL encrypted</div>
+        </div>
+
+        <!-- Order Summary -->
+        <div class="booking-summary">
+          <h3>Order Summary</h3>
+          <div class="summary-row"><span>Hotel</span><strong>Hotel Paradise</strong></div>
+          <div class="summary-row"><span>Room</span><strong>Suite Room</strong></div>
+          <div class="summary-row"><span>Check-in</span><strong>—</strong></div>
+          <div class="summary-row"><span>Check-out</span><strong>—</strong></div>
+          <div class="summary-row"><span>Nights</span><strong>1</strong></div>
+          <div class="summary-row"><span>Guests</span><strong>2</strong></div>
+          <div style="height:1px;background:rgba(255,255,255,0.06);margin:0.75rem 0"></div>
+          <div class="summary-row"><span>Room Rate</span><strong>₹4,999</strong></div>
+          <div class="summary-row"><span>Taxes &amp; Fees (12%)</span><strong>₹600</strong></div>
+          <div class="summary-total">
+            <span>Total Payable</span>
+            <span>₹5,599</span>
+          </div>
+          <div style="margin-top:1.5rem;padding:1rem;background:rgba(39,174,96,0.08);border:1px solid rgba(39,174,96,0.2);border-radius:var(--radius);font-size:0.8rem;color:#6bcf8e;text-align:center">
+            ✓ Free cancellation until 24 hrs before check-in
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="footer-bottom">
+        <span>&copy; 2024 Hotel Booking System. All rights reserved.</span>
+        <span>Crafted with ♥</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function selectMethod(el) {
+      document.querySelectorAll('.pay-method').forEach(m => m.classList.remove('active'));
+      el.classList.add('active');
+    }
+
+    function formatCard(input) {
+      let v = input.value.replace(/\D/g, '').substring(0,16);
+      let formatted = v.match(/.{1,4}/g)?.join(' ') || v;
+      input.value = formatted;
+      const display = v.padEnd(16,'•');
+      document.getElementById('cardDisplay').textContent =
+        display.match(/.{1,4}/g).join(' ');
+    }
+
+    function submitPayment() {
+      const name = document.getElementById('cardName').value;
+      const num = document.getElementById('cardNumber').value;
+      if (!name || !num) {
+        alert('Please fill in card details.');
+        return;
+      }
+      alert('🎉 Payment successful! Your booking is confirmed. Check your email for details.');
+      window.location.href = 'index.html';
+    }
+  </script>
+
+</body>
+</html>
